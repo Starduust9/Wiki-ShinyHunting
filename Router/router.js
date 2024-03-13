@@ -23,7 +23,6 @@ const getRouteByUrl = (url) => {
 
 // Fonction pour charger le contenu de la page
 const LoadContentPage = async () => {
-  console.log("ici");
   const path = window.location.pathname;
   // Récupération de l'URL actuelle
   const actualRoute = getRouteByUrl(path);
