@@ -72,7 +72,7 @@
   --bs-dark-border-subtle: #adb5bd;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-font-sans-serif: "Imprima", sans-serif;
+  --bs-font-sans-serif: "Indie Flower", sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -11972,7 +11972,7 @@ html {
 }
 
 main {
-  margin-bottom: 340px;
+  margin-bottom: 300px;
 }
 
 footer.footer {
@@ -11980,4 +11980,57 @@ footer.footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+p {
+  font-family: "Imprima", serif;
+  font-size: 18px;
+}
+
+.nav-link {
+  color: black;
+}
+
+/* Couleur spécifique pour le lien avec href="#" */
+a[href="/streameretyoutuber"] {
+  color: red; /* ou toute autre couleur spécifique que vous voulez */
+}
+
+.hero-scene {
+  position: relative;
+  overflow: hidden; /* Assure que le débordement est masqué pour s'adapter à la taille du contenu */
+}
+
+.hero-scene::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* La taille de l'image de fond s'adaptera à la taille du contenu principal */
+  background-image: url(../assets/picture/SinnohFond.png);
+  background-size: cover;
+  filter: brightness(0.8);
+  z-index: -1;
+}
+
+.hero-scene-content {
+  min-height: calc(100vh - 300px); /* Garantit que le contenu principal prend au moins toute la hauteur de la fenêtre du navigateur */
+  padding-bottom: 300px; /* Ajustez ceci selon la hauteur de votre footer */
+  box-sizing: border-box; /* Assure que le padding ne modifie pas la taille totale */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  background-color: rgba(240, 240, 240, 0.5); /* Couleur de fond gris avec une opacité de 0.9 */
+  padding: 10px; /* Ajouter du rembourrage autour du texte */
+}
+
+footer {
+  position: relative;
+  height: 300px; /* Ajustez ceci selon la hauteur de votre footer */
+  background-color: #333; /* Juste pour la démonstration */
 }/*# sourceMappingURL=main.css.map */
