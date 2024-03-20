@@ -46,7 +46,7 @@ a[href="/streameretyoutuber"] {
     left: 0;
     width: 100%;
     height: 100%; /* La taille de l'image de fond s'adaptera à la taille du contenu principal */
-    background-image: url(../assets/picture/KalosFond.png);
+    background-image: url(../assets/picture/SinnohFond.png);
     background-size: cover;
     background-position: center; /* Centre l'image horizontalement et verticalement */
     filter: brightness(0.8);
@@ -84,4 +84,9 @@ footer {
     position: relative;
     height: 300px; /* Ajustez ceci selon la hauteur de votre footer */
     background-color: #333; /* Juste pour la démonstration */
+}
+
+.bg-contact {
+    background-color: rgba(0, 0, 0, 0.5); /* Couleur de fond foncée */
+    color: #fff; /* Couleur de texte claire */
 }

@@ -1,0 +1,50 @@
+<div class="hero-scene text-center">
+    <div class="hero-scene-content">
+      <div class="container">
+        <img class="w-100" src="/assets/picture/WIkiShinyHunting.png" alt="WIkiShinyHunting">
+    </div>
+    <img style="height: 94px" src="/assets/picture/Brindibou.png" alt="Brindibou">
+    <div class="bg-contact">
+        <div class="container py-5">
+            <div class="row py-5 g-3 flex-column align-items-center">
+                <div class="col-md-6 first_col">
+                    <h1 class="text-center mt-3 text-white">Me contacter, report un bug, un problème, des fautes ou tout autres demande.</h1>
+                    <form class="p-4 mt-5">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label text-white">Entrez votre Pseudo ou votre Nom</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label text-white">Email de contact</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label text-white">Entrez votre message</label>
+                            <textarea  type="text" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EnvoiSuccès">Envoyer mon message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="EnvoiSuccès" tabindex="-1" aria-labelledby="EnvoiSuccèsLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="EnvoiSuccèsLabel">Confirmation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            Votre message a été envoyé avec succès.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
