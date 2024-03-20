@@ -12001,6 +12001,11 @@ a[href="/streameretyoutuber"] {
   overflow: hidden; /* Assure que le débordement est masqué pour s'adapter à la taille du contenu */
 }
 
+.accueil-scene {
+  position: relative;
+  overflow: hidden; /* Assure que le débordement est masqué pour s'adapter à la taille du contenu */
+}
+
 .hero-scene::before {
   content: "";
   position: absolute;
@@ -12008,8 +12013,23 @@ a[href="/streameretyoutuber"] {
   left: 0;
   width: 100%;
   height: 100%; /* La taille de l'image de fond s'adaptera à la taille du contenu principal */
-  background-image: url(../assets/picture/SinnohFond.png);
+  background-image: url(../assets/picture/KalosFond.png);
   background-size: cover;
+  background-position: center; /* Centre l'image horizontalement et verticalement */
+  filter: brightness(0.8);
+  z-index: -1;
+}
+
+.accueil-scene::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* La taille de l'image de fond s'adaptera à la taille du contenu principal */
+  background-image: url(../assets/picture/GalarFond.png);
+  background-size: cover;
+  background-position: center; /* Centre l'image horizontalement et verticalement */
   filter: brightness(0.8);
   z-index: -1;
 }
