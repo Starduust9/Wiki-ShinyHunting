@@ -4136,12 +4136,6 @@ textarea.form-control-lg {
     flex-wrap: nowrap;
     justify-content: flex-start;
   }
-  .navbar-expand-lg .navbar-global {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    align-items: center;
-  }
   .navbar-expand-lg .navbar-nav {
     flex-direction: row;
   }
