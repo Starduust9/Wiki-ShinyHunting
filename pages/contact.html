@@ -3,13 +3,15 @@
       <div class="container">
         <img class="w-100" src="/assets/picture/WIkiShinyHunting.png" alt="WIkiShinyHunting">
     </div>
-    <img style="height: 94px" src="/assets/picture/Brindibou.png" alt="Brindibou">
+    <div style="position: relative;">
+        <img style="position: absolute; height: 94px; left: -450px; bottom: -10px;" src="/assets/picture/Brindibou.png" alt="Brindibou">
+    </div>
     <div class="bg-contact">
         <div class="container py-5">
             <div class="row py-5 g-3 flex-column align-items-center">
                 <div class="col-md-6 first_col">
                     <h1 class="text-center mt-3 text-white">Me contacter, report un bug, un problème, des fautes ou tout autres demande.</h1>
-                    <form action="envoi_email.php" method="post">
+                    <form action="/Mail_PHP/envoi_email.php" method="post">
                         <div class="mb-3">
                             <label for="PseudoInput" class="form-label text-white">Entrez votre Pseudo ou votre Nom</label>
                             <input type="text" class="form-control" id="PseudoInput" name="pseudo">

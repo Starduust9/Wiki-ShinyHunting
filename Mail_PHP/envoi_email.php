@@ -2,7 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php'; // Chemin vers PHPMailer autoloader
+require 'vendor\autoload.php'; // Chemin vers PHPMailer autoloader
 
 // Vérifier si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -15,18 +15,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail = new PHPMailer(true);
 
     try {
-        // Paramètres du serveur SMTP de Gmail
+        // Paramètres du serveur SMTP d'O2Switch
         $mail->isSMTP();
-        $mail->Host = 'smtp.o2switch.net';
+        $mail->Host = 'mail.wikishinyhunting.fr';
         $mail->SMTPAuth = true;
-        $mail->Username = 'wikishinyhunting@gmail.com'; // Votre adresse Gmail
+        $mail->Username = 'smtp.o2switch@wikishinyhunting.fr'; // Votre adresse Gmail
         $mail->Password = '8f8s-5fzA-6y8+'; // Votre mot de passe Gmail
-        $mail->SMTPSecure = 'tls';
-        $mail->Port = 587;
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port = 465;
 
         // Destinataire, sujet et contenu de l'e-mail
         $mail->setFrom($email, $nom);
-        $mail->addAddress('wikishinyhunting@gmail.com', 'Votre Nom'); // Votre adresse e-mail
+        $mail->addAddress('wikishinyhunting@gmail.com'); // Votre adresse e-mail
         $mail->Subject = 'Nouveau message depuis le formulaire de contact';
         $mail->Body = "Nom: $nom\nEmail: $email\n\nMessage:\n$message";
 

@@ -11996,10 +11996,18 @@ p {
 .nav-link {
   color: black;
 }
-
+a[href="/streameryoutuber"] .violet,
+a[href="/streameryoutuber"] .rouge {
+  text-shadow: -1px -1px 0 rgb(0, 0, 0),               
+                1px  1px 0 rgb(0, 0, 0); /* Crée un contour noir autour du texte */
+}
 /* Couleur spécifique pour le lien avec href="#" */
-a[href="/streameretyoutuber"] {
-  color: red; /* ou toute autre couleur spécifique que vous voulez */
+a[href="/streameryoutuber"] .violet {
+  color: #6441a5;
+}
+
+a[href="/streameryoutuber"] .rouge {
+  color: red;
 }
 
 .hero-scene {
@@ -12053,6 +12061,11 @@ a[href="/streameretyoutuber"] {
 .hero-text {
   background-color: rgba(240, 240, 240, 0.5); /* Couleur de fond gris avec une opacité de 0.9 */
   padding: 10px; /* Ajouter du rembourrage autour du texte */
+}
+
+.black-text {
+  background-color: rgba(0, 0, 0, 0.5); /* Couleur de fond gris avec une opacité de 0.9 */
+  padding: 50px; /* Ajouter du rembourrage autour du texte */
 }
 
 footer {
