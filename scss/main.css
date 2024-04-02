@@ -12068,6 +12068,11 @@ a[href="/streameryoutuber"] .rouge {
   padding: 50px; /* Ajouter du rembourrage autour du texte */
 }
 
+.blackO-text {
+  background-color: rgba(0, 0, 0, 0.7); /* Couleur de fond gris avec une opacité de 0.9 */
+  padding: 15px; /* Ajouter du rembourrage autour du texte */
+}
+
 footer {
   position: relative;
   height: 300px; /* Ajustez ceci selon la hauteur de votre footer */
