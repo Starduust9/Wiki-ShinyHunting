@@ -11,6 +11,7 @@ inputMail.addEventListener("keyup", validateForm);
 function validateForm(){
     const pseudoOk = validateRequired(inputPseudo);
     const mailOk = validateMail(inputMail);
+    const btnValidation = document.getElementById("btn-envoie-message");
 
     if(pseudoOk && mailOk){
         btnValidation.disabled = false;
@@ -46,5 +47,17 @@ function validateRequired(input){
         input.classList.remove("is-valid");
         input.classList.add("is-invalid");
         return false;
+    }
+}
+
+// Fonction pour valider et soumettre le formulaire
+function validateAndSubmit() {
+    // Valider le formulaire
+    const pseudoOk = validateRequired(inputPseudo);
+    const mailOk = validateMail(inputMail);
+
+    // Si le formulaire est valide, soumettre le formulaire
+    if (pseudoOk && mailOk) {
+        document.querySelector('form').submit(); // Soumettre le formulaire
     }
 }
