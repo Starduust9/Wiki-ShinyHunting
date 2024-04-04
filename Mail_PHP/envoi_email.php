@@ -2,7 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor\autoload.php'; // Chemin vers PHPMailer autoloader
+require 'vendor/autoload.php'; // Chemin vers PHPMailer autoloader
 
 // Vérifier si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Envoyer l'e-mail
         $mail->send();
        // Si l'e-mail est envoyé avec succès, vous pouvez rediriger l'utilisateur vers une page de confirmation ou afficher un message de confirmation ici
-        
+   
     } catch (Exception $e) {
         // Gérer l'exception en affichant un message d'erreur ou en enregistrant les détails de l'erreur dans un fichier de journal, etc.
         echo 'Erreur lors de l\'envoi de l\'e-mail : ', $e->getMessage();
