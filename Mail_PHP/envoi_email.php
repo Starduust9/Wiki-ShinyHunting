@@ -2,7 +2,11 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php'; // Chemin vers PHPMailer autoloader
+require '../../vendor/autoload.php'; // Chemin vers PHPMailer autoloader
+
+// Initialiser les variables de succès et d'erreur à false
+$success = false;
+$error = false;
 
 // Vérifier si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -19,8 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host = 'mail.wikishinyhunting.fr';
         $mail->SMTPAuth = true;
-        $mail->Username = 'smtp.o2switch@wikishinyhunting.fr'; // Votre adresse Gmail
-        $mail->Password = '8f8s-5fzA-6y8+'; // Votre mot de passe Gmail
+        $mail->Username = 'smtp.o2switch@wikishinyhunting.fr'; // Votre adresse O2Switch
+        $mail->Password = '8f8s-5fzA-6y8+'; // Votre mot de passe O2Switch
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
 
@@ -32,11 +36,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Envoyer l'e-mail
         $mail->send();
-       // Si l'e-mail est envoyé avec succès, vous pouvez rediriger l'utilisateur vers une page de confirmation ou afficher un message de confirmation ici
-   
+
+        // Marquer l'envoi comme un succès
+        $success = true;
+
     } catch (Exception $e) {
-        // Gérer l'exception en affichant un message d'erreur ou en enregistrant les détails de l'erreur dans un fichier de journal, etc.
-        echo 'Erreur lors de l\'envoi de l\'e-mail : ', $e->getMessage();
+        // Marquer l'envoi comme une erreur
+        $error = true;
     }
+}
+
+// Redirection vers contact.html avec un paramètre de succès ou d'erreur
+if ($success) {
+    header("Location: /pages/contact.html?success=true");
+    exit();
+} elseif ($error) {
+    header("Location: /pages/contact.html?error=true");
+    exit();
 }
 ?>
