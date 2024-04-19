@@ -11976,11 +11976,6 @@ html {
   position: relative;
   min-height: 100%;
 }
-
-main {
-  margin-bottom: 300px;
-}
-
 footer.footer {
   padding: 15px;
   position: absolute;
@@ -12050,7 +12045,7 @@ a[href="/streameryoutuber"] .rouge {
 
 .hero-scene-content {
   min-height: calc(100vh - 300px); /* Garantit que le contenu principal prend au moins toute la hauteur de la fenêtre du navigateur */
-  padding-bottom: 300px; /* Ajustez ceci selon la hauteur de votre footer */
+  padding-bottom: 480px; /* Ajustez ceci selon la hauteur de votre footer */
   box-sizing: border-box; /* Assure que le padding ne modifie pas la taille totale */
   display: flex;
   flex-direction: column;
@@ -12075,7 +12070,6 @@ a[href="/streameryoutuber"] .rouge {
 
 footer {
   position: relative;
-  height: 300px; /* Ajustez ceci selon la hauteur de votre footer */
   background-color: #333; /* Juste pour la démonstration */
 }
 

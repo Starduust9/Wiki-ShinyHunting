@@ -47,8 +47,44 @@ function validateAndSubmit() {
     const pseudoOk = validateRequired(inputPseudo);
     const mailOk = validateMail(inputMail);
 
-    // Si le formulaire est valide, soumettre le formulaire
+    // Si le formulaire est valide, soumettre le formulaire via AJAX
     if (pseudoOk && mailOk) {
-        document.querySelector('form').submit(); // Soumettre le formulaire
+        // Récupérer les données du formulaire
+        const pseudo = inputPseudo.value;
+        const email = inputMail.value;
+        const message = document.getElementById("exampleFormControlTextarea1").value;
+
+        // Construction des données à envoyer
+        const formData = new FormData();
+        formData.append("pseudo", pseudo);
+        formData.append("email", email);
+        formData.append("message", message);
+
+        // Envoi des données via AJAX
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "/Mail_PHP/envoi_email.php", true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    // Analyser la réponse JSON si nécessaire
+                    const response = JSON.parse(xhr.responseText);
+                    if (response.success) {
+                        // Afficher le modal de succès si l'envoi est réussi
+                        document.getElementById("EnvoiSuccès").style.display = "block";
+                    } else {
+                        // Afficher le modal d'erreur avec le message d'erreur
+                        const errorMessage = document.getElementById("EnvoiErreurMessage");
+                        errorMessage.textContent = "Erreur: " + response.error;
+                        document.getElementById("EnvoiErreur").style.display = "block";
+                    }
+                } else {
+                    // Afficher le modal d'erreur générique
+                    const errorMessage = document.getElementById("EnvoiErreurMessage");
+                    errorMessage.textContent = "Une erreur est survenue lors de l'envoi du message.";
+                    document.getElementById("EnvoiErreur").style.display = "block";
+                }
+            }
+        };
+        xhr.send(formData);
     }
 }

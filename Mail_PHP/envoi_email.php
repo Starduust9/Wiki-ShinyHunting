@@ -2,11 +2,11 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '../../vendor/autoload.php'; // Chemin vers PHPMailer autoloader
+require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php'; // Chemin vers PHPMailer autoloader
 
 // Initialiser les variables de succès et d'erreur à false
 $success = false;
-$error = false;
+$error = "";
 
 // Vérifier si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -41,17 +41,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $success = true;
 
     } catch (Exception $e) {
-        // Marquer l'envoi comme une erreur
-        $error = true;
+        // Capturer l'exception et stocker le message d'erreur
+        $error = $e->getMessage();
     }
 }
 
-// Redirection vers contact.html avec un paramètre de succès ou d'erreur
-if ($success) {
-    header("Location: /pages/contact.html?success=true");
-    exit();
-} elseif ($error) {
-    header("Location: /pages/contact.html?error=true");
-    exit();
-}
+// Retourner une réponse JSON
+header('Content-Type: application/json');
+echo json_encode(array('success' => $success, 'error' => $error));
 ?>

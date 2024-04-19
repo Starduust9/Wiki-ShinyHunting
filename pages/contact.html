@@ -4,14 +4,14 @@
         <img class="w-100" src="/assets/picture/WIkiShinyHunting.png" alt="WIkiShinyHunting">
     </div>
     <div style="position: relative;">
-        <img style="position: absolute; height: 8vh; left: -450px; bottom: -10px;" src="/assets/picture/Brindibou.png" alt="Brindibou">
+        <img style="position: fixed; height: 8vh; left: 100px; bottom: 740px;" src="/assets/picture/Brindibou.png" alt="Brindibou">
     </div>
     <div class="bg-contact">
         <div class="container py-5">
             <div class="row py-5 g-3 flex-column align-items-center">
                 <div class="col-md-6 first_col">
                     <h1 class="text-center mt-3 text-white">Me contacter, report un bug, un problème, des fautes ou tout autres demande.<br><br></h1>
-                    <form action="/Mail_PHP/envoi_email.php" method="post">
+                    <form action="#" method="post">
                         <div class="mb-3">
                             <label for="PseudoInput" class="form-label text-white">Entrer votre Pseudo ou votre Nom</label>
                             <input type="text" class="form-control" id="PseudoInput" name="pseudo">
@@ -25,7 +25,7 @@
                             <textarea  type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
                         </div>
                         <div class="mb-3">
-                            <button type="button" class="btn btn-primary" id="btn-envoie-message" onclick="validateAndSubmit()" data-bs-toggle="modal" data-bs-target="#EnvoiSuccès" disabled>Envoyer mon message</button>
+                            <button type="button" class="btn btn-primary" id="btn-envoie-message" data-bs-toggle="modal" data-bs-target="#EnvoiSuccès" disabled>Envoyer mon message</button>
                         </div>
                     </form>
                 </div>
