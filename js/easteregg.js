@@ -1,5 +1,6 @@
 let delayTimer;
 let clics = 0;
+let lastLogoSrc = ""; // Garder une trace de la dernière source d'image de logo
 
 document.addEventListener('DOMContentLoaded', function() {
     // Réinitialiser les clics si le cache est vidé
@@ -14,46 +15,54 @@ document.addEventListener('DOMContentLoaded', function() {
     updateLogo(clics);
 });
 
-function changeLogo() {
+function changeLogo(event) {
     clearTimeout(delayTimer);
     clics++;
 
     delayTimer = setTimeout(function() {
-        updateLogo(clics);
+        updateLogo(clics, event);
         localStorage.setItem('clics', clics);
     }, 3000);
 }
 
-function updateLogo(clics) {
-    let logo = document.getElementById("logo");
+function updateLogo(clics, event) {
+    // Ne pas accéder à la propriété 'type' de l'événement s'il est indéfini
+    if (event && event.type === "click") {
+        let logo = document.getElementById("logo");
+        let newLogoSrc = "";
 
     if (clics >= 5 && clics < 8) {
-        logo.src = "/assets/picture/SpriteEvoliShiny.png";
-        playSound("/assets/picture/legendsarceusshinysound.mp3");
+        newLogoSrc = "/assets/picture/SpriteEvoliShiny.png";
     } else if (clics >= 8 && clics < 10) {
-        logo.src = "/assets/picture/SpriteShadowMewtwo.png";
-        playSound("/assets/picture/legendsarceusshinysound.mp3");
+        newLogoSrc = "/assets/picture/SpriteShadowMewtwo.png";
     } else if (clics >= 10 && clics < 12) {
-        logo.src = "/assets/picture/SpriteGobouShiny.png";
-        playSound("/assets/picture/legendsarceusshinysound.mp3");
+        newLogoSrc = "/assets/picture/SpriteGobouShiny.png";
     } else if (clics >= 12 && clics < 15) {
-        logo.src = "/assets/picture/SpriteMégaGardevoirShiny.png";
-        playSound("/assets/picture/legendsarceusshinysound.mp3");
+        newLogoSrc = "/assets/picture/SpriteMégaGardevoirShiny.png";
     } else if (clics >= 15) {
-        logo.src = "/assets/picture/SpriteMewShiny.png";
-        playSound("/assets/picture/legendsarceusshinysound.mp3");
+        newLogoSrc = "/assets/picture/SpriteMewShiny.png";
     } else {
-        logo.src = "/assets/picture/Logo.png";
+        newLogoSrc = "/assets/picture/Logo.png";
+    }
+
+    // Vérifier si l'image du logo a changé
+    if (newLogoSrc !== lastLogoSrc) {
+        logo.src = newLogoSrc;
+        playSound("/assets/picture/legendsarceusshinysound.mp3");
+        lastLogoSrc = newLogoSrc; // Mettre à jour la dernière source d'image du logo
     }
 
     console.log("Nombre de clics :", clics);
+    }
 }
 
 function playSound(soundSrc) {
-    let audio = new Audio(soundSrc);
-    audio.play().catch(function(error) {
-        console.error('Erreur lors de la lecture du son :', error.message);
-    });
+    // Vérifier si le nombre de clics est supérieur à 4 avant de jouer le son
+    if (clics > 4) {
+        let audio = new Audio(soundSrc);
+        audio.play().catch(function(error) {
+            console.error('Erreur lors de la lecture du son :', error.message);
+        });
+    }
 }
-
 document.getElementById("logo").addEventListener("click", changeLogo);
