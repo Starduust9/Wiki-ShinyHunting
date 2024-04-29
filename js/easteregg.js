@@ -65,4 +65,13 @@ function playSound(soundSrc) {
         });
     }
 }
+
+document.addEventListener('keydown', function(event) {
+    // Vérifier si la touche pressée est la touche F5
+    if (event.key === "F5") {
+        // Réinitialiser le localStorage
+        localStorage.clear();
+    }
+});
+
 document.getElementById("logo").addEventListener("click", changeLogo);
