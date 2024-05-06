@@ -1933,7 +1933,7 @@ progress {
 
 .table-primary {
   --bs-table-color: #000000;
-  --bs-table-bg: #d1e7fc;
+  --bs-table-bg: #4c678f;
   --bs-table-border-color: #a7b9ca;
   --bs-table-striped-bg: #c7dbef;
   --bs-table-striped-color: #000000;
@@ -2033,6 +2033,20 @@ progress {
   --bs-table-color: #fff;
   --bs-table-bg: #343a40;
   --bs-table-border-color: #5d6166;
+  --bs-table-striped-bg: #3e444a;
+  --bs-table-striped-color: #fff;
+  --bs-table-active-bg: #484e53;
+  --bs-table-active-color: #fff;
+  --bs-table-hover-bg: #43494e;
+  --bs-table-hover-color: #fff;
+  color: var(--bs-table-color);
+  border-color: var(--bs-table-border-color);
+}
+
+.table-black0 {
+  --bs-table-color: #fff;
+  --bs-table-bg: hsla(0, 0%, 0%, 0.0);
+  --bs-table-border-color: #4c678f;
   --bs-table-striped-bg: #3e444a;
   --bs-table-striped-color: #fff;
   --bs-table-active-bg: #484e53;

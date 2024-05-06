@@ -3,14 +3,8 @@ let clics = 0;
 let lastLogoSrc = ""; // Garder une trace de la dernière source d'image de logo
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Réinitialiser les clics si le cache est vidé
-    if (!performance.getEntriesByType("navigation")[0].type || performance.getEntriesByType("navigation")[0].type === "navigate") {
-        localStorage.removeItem('clics');
-    }
-
     // Charger les clics depuis le stockage local
     clics = localStorage.getItem('clics') ? parseInt(localStorage.getItem('clics')) : 0;
-
     // Mettre à jour le logo en fonction des clics
     updateLogo(clics);
 });
@@ -27,7 +21,6 @@ function changeLogo(event) {
 
 function updateLogo(clics, event) {
     // Ne pas accéder à la propriété 'type' de l'événement s'il est indéfini
-    if (event && event.type === "click") {
         let logo = document.getElementById("logo");
         let newLogoSrc = "";
 
@@ -48,12 +41,14 @@ function updateLogo(clics, event) {
     // Vérifier si l'image du logo a changé
     if (newLogoSrc !== lastLogoSrc) {
         logo.src = newLogoSrc;
-        playSound("/assets/picture/legendsarceusshinysound.mp3");
-        lastLogoSrc = newLogoSrc; // Mettre à jour la dernière source d'image du logo
+        lastLogoSrc = newLogoSrc; // Mettre à jour la dernière source d'image du logo 
+        if(event && event.type === "click"){
+            playSound("/assets/picture/legendsarceusshinysound.mp3");
+        }
+        
+
     }
 
-    console.log("Nombre de clics :", clics);
-    }
 }
 
 function playSound(soundSrc) {
