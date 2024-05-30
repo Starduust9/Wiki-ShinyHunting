@@ -17,6 +17,7 @@ export const allRoutes = [
     new Route("/7G", "7G", "/pages/page-gen/7G.html"),
     new Route("/8G", "8G", "/pages/page-gen/8G.html"),
     new Route("/9G", "9G", "/pages/page-gen/9G.html"),
+    new Route("/masuda", "Masuda", "/pages/page-gen/masuda.html"),
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename

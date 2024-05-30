@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shiny Rates Table</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: white;
+        }
+        h1 {
+            font-size: 28px;
+        }
+        h2 {
+            font-size: 24px;
+            color: hsla(0, 100%, 50%, 0.700);
+        }
+        h3 {
+            font-size: 18px;
+        }
+        h4 {
+            font-size: 20px;
+            color: hsla(0, 100%, 50%, 0.700);
+        }
+        h5 {
+            font-size: 14px;
+        }
+        em {
+            color: rgb(200, 130, 0);
+        }
+        .gras {
+            font-weight: bold;
+        }
+        a {
+            color: rgba(255, 0, 0, 0.7);
+        }
+        a:hover {
+            color: #6441a5;
+        }
+        .response-container {
+            border: 5px solid #4C678F;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .border-bottom {
+            color: #4C678F;
+            border-bottom: 2px solid #4C678F;
+            margin-bottom: 10px;
+        }
+        .table-container {
+            overflow-x: auto;
+            padding: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: rgba(0, 0, 0, 0.545);
+            color: white;
+        }
+        th, td {
+            border: 1px solid #4C678F;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #555;
+        }
+        .flipped {
+            transform: scaleX(-1);
+        }
+        .resized1 {
+            height: 40vh;
+        }
+        .resized2 {
+            height: 40vh;
+        }
+    </style>
+</head>
+<body>
+
+<div class="accueil-scene text-center">
+    <div class="hero-scene-content">
+        <div class="container">
+            <img class="w-100" src="/assets/picture/WIkiShinyHunting.png" alt="WIkiShinyHunting">
+        </div>
+
+        <div class="blackO-text text-white response-container" style="width: 80%;">
+            <h1><u>La technique Masuda</u></h1>
+        </div>
+        <div class="blackO-text text-white response-container" style="width: 80%;">
+            <h2>Pour commencer qu'est-ce que le Masuda?<br></h2>
+            <div class="border-bottom"></div>
+            <h3><br>Le nom "Masuda" vient de Junichi Masuda, qui a révélé la méthode. Son Wikipedia <a href="https://fr.wikipedia.org/wiki/Jun%27ichi_Masuda" target="_blank">ici</a>.<br>Elle est présente depuis les versions Diamant et Perle et reste présente jusqu'au jeu actuel.<br><br>
+                Pour utiliser cette méthode, il vous faudra tout simplement reproduire 2 Pokémon du même groupe d'oeuf de nationalités différentes! Par exemple un Pokémon Français et un Pokémon Anglais.<br><br>
+                Avant les versions 6G, la nationalité d'un Pokémon dépend de la langue de la cartouche. A partir de X et Y, la nationalité dépend de la langue que vous choisissez au début du jeu, vous pouvez donc avoir une cartouche française avec des Pokémon de nationalité coréenne.</h3>
+        </div>
+        <div class="blackO-text text-white response-container" style="width: 80%;">
+            <h2>Les taux d'apparition de shiny par génération<br></h2>
+            <div class="border-bottom"></div>
+            <div class="table-container">
+                <table class="table table-bordered table-black0">
+                    <tr>
+                        <th></th>
+                        <th>4G</th>
+                        <th>5G</th>
+                        <th>6G</th>
+                        <th>7G</th>
+                        <th>8G</th>
+                        <th>9G</th>
+                    </tr>
+                    <tr>
+                        <td>Oeuf [+<img style="height: 4vh;" src="/assets/picture/SpriteCharmeChroma_NB2.png" alt="ShinyCharm">]</td>
+                        <td>1/8192</td>
+                        <td>1/8192 [ 2731<img style="height: 4vh;" src="/assets/picture/SpriteCharmeChroma_NB2.png" alt="ShinyCharm">]</td>
+                        <td>1/4096 [ 2048<img style="height: 4vh;" src="/assets/picture/SpriteCharmeChroma_NB2.png" alt="ShinyCharm">]</td>
+                        <td>1/4096 [ 2048<img style="height: 4vh;" src="/assets/picture/SpriteCharmeChroma_NB2.png" alt="ShinyCharm">]</td>
+                        <td>1/4096 [ 2048<img style="height: 4vh;" src="/assets/picture/SpriteCharmeChroma_NB2.png" alt="ShinyCharm">]</td>
+                        <td>1/4096 [ 2048<img style="height: 4vh;" src="/assets/picture/SpriteCharmeChroma_NB2.png" alt="ShinyCharm">]</td>
+                    </tr>
+                    <tr>
+                        <td>Oeuf Masuda [+<img style="height: 4vh;" src="/assets/picture/SpriteCharmeChroma_NB2.png" alt="ShinyCharm">]</td>
+                        <td>1/1638</td>
+                        <td>1/1365 [ 1024<img style="height: 4vh;" src="/assets/picture/SpriteCharmeChroma_NB2.png" alt="ShinyCharm">]</td>
+                        <td>1/685 [ 512<img style="height: 4vh;" src="/assets/picture/SpriteCharmeChroma_NB2.png" alt="ShinyCharm">]</td>
+                        <td>1/685 [ 512<img style="height: 4vh;" src="/assets/picture/SpriteCharmeChroma_NB2.png" alt="ShinyCharm">]</td>
+                        <td>1/685 [ 512<img style="height: 4vh;" src="/assets/picture/SpriteCharmeChroma_NB2.png" alt="ShinyCharm">]</td>
+                        <td>1/685 [ 512<img style="height: 4vh;" src="/assets/picture/SpriteCharmeChroma_NB2.png" alt="ShinyCharm">]</td>
+                    </tr>
+                </table>
+            </div>
+            <h3><a href="https://www.pokebip.com/page/general/reproduction/groupes-oeufs-9g" target="_blank">Voici le lien des groupes d'oeufs</a></h3>
+        </div>
+
+        <picture style="position: fixed; bottom: 100px; left: -140px; z-index: -1;">
+            <img src="/assets/picture/Regieleki.png" alt="Regieleki" class="flipped resized1">
+        </picture>
+        <picture style="position: fixed; bottom: 200px; right: -120px; z-index: -1;">
+            <img src="/assets/picture/Xerneas.png" alt="Xerneas" class="flipped resized2">
+        </picture>
+    </div>
+</div>
+
+</body>
+</html>
